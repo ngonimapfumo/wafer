@@ -345,9 +345,9 @@ class Score(models.Model):
                                related_name='scores')
     aspect = models.ForeignKey(ReviewAspect, on_delete=models.CASCADE)
 
-    value = models.IntegerField(default=1, validators=[
-        validators.MinValueValidator(0),
-        validators.MaxValueValidator(10)
+    value = models.IntegerField(default=0, validators=[
+        validators.MinValueValidator(-2),
+        validators.MaxValueValidator(2)
     ])
 
     def __str__(self):
